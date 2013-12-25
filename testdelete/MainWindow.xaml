@@ -1,0 +1,33 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="testdelete.MainWindow"
+        Title="MainWindow" Height="374.138" Width="525">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid Height="344" VerticalAlignment="Top">
+        <StackPanel>
+            <Canvas Name="board" MouseWheel="Canvas_MouseWheel" Height="298">
+                <Canvas.RenderTransform>
+
+                    <ScaleTransform  x:Name="st" />
+                </Canvas.RenderTransform>
+                <TextBlock>Some text</TextBlock>
+                <MediaElement x:Name="player" UnloadedBehavior="Play" Height="200" RenderTransformOrigin="0.5,0.5" Width="200" Source="h1.avi" LoadedBehavior="Manual" Margin="300,300">
+                    <MediaElement.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </MediaElement.RenderTransform>
+                </MediaElement>
+            </Canvas>
+            <Button Content="Button" HorizontalAlignment="Left" Width="100" Click="Button_Click"  />
+            <TextBox Name="textBox1"  Height="23" TextWrapping="Wrap" Text="5" HorizontalAlignment="Right" Width="100"/>
+            
+        </StackPanel>
+    </Grid>
+</Window>
